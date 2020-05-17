@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.davidkazad.cevv"> <!-- 46191 -->
+
+
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <application
+        android:name=".config.SongsApplication"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/MyAppTheme"
+        tools:ignore="AllowBackup,GoogleAppIndexingWarning">
+        <meta-data
+            android:name="asset_statements"
+            android:resource="@string/asset_statements" />
+        <meta-data
+            android:name="AA_DB_NAME"
+            android:value="main.db" />
+        <meta-data
+            android:name="AA_DB_VERSION"
+            android:value="1" />
+        <meta-data
+            android:name="AA_MODELS"
+            android:value="com.davidkazad.cevv.models.Favoris             ,com.davidkazad.cevv.models.Recent             ,com.davidkazad.cevv.models.Post             ,com.davidkazad.cevv.models.Comment             ,com.davidkazad.cevv.models.Page             ,com.davidkazad.cevv.models.User" />
+        <provider
+            android:name="com.davidkz.eazyorm.content.ContentProvider"
+            android:authorities="com.davidkazad.cevv"
+            android:enabled="true"
+            android:exported="false">
+        </provider>
+        <activity
+            android:name=".SplashActivity"
+            android:label="@string/app_name"
+            android:theme="@style/AppThemeLogin">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".IntroSlider"
+            android:theme="@style/AppThemeLogin" />
+        <activity android:name=".activities.EditActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".SplashActivity" />
+        </activity>
+        <activity
+            android:name=".activities.ListActivity"
+            android:theme="@style/MyAppTheme">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".activities.HomeActivity" />
+        </activity>
+        <activity android:name=".activities.ItemActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".SplashActivity" />
+        </activity>
+        <activity
+            android:name=".activities.AboutActivity"
+            android:theme="@style/MyAppTheme"
+            android:label="@string/about">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".SplashActivity" />
+        </activity>
+        <activity
+            android:name=".activities.SettingsActivity"
+            android:label="@string/title_activity_settings"
+            android:parentActivityName=".activities.HomeActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.davidkazad.cevv.activities.HomeActivity" />
+        </activity>
+        <activity
+            android:name=".activities.FavorisActivity"
+            android:label="@string/title_activity_favoris"
+            android:parentActivityName=".activities.HomeActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.davidkazad.cevv.activities.HomeActivity" />
+        </activity>
+        <activity
+            android:name=".chat.app.ChatActivity"
+            android:parentActivityName=".activities.HomeActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.davidkazad.cevv.activities.HomeActivity" />
+        </activity>
+        <activity
+            android:name=".activities.HomeActivity"
+            android:label="@string/title_activity_home"
+            android:parentActivityName=".activities.HomeActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.davidkazad.cevv.activities.HomeActivity" />
+        </activity>
+        <activity
+            android:name=".chat.app.CommentActivity"
+            android:label="@string/comment_activity" />
+        <activity
+            android:name=".activities.SongsListActivity"
+            android:label="@string/title_activity_songs_list"
+            android:parentActivityName=".activities.HomeActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.davidkazad.cevv.activities.HomeActivity" />
+        </activity>
+        <activity android:name=".activities.OtherBooks"
+            android:label="@string/title_activity_songs_list"
+            android:parentActivityName=".activities.HomeActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.davidkazad.cevv.activities.HomeActivity" />
+        </activity>
+
+    </application>
+
+</manifest>
